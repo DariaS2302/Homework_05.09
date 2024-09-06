@@ -47,6 +47,7 @@ public class demoqaFormTest {
         $("#react-select-4-input").setValue("Del").pressEnter(); // город
         $("#submit").click();
 
+
         //проверка
         $(".table-responsive").shouldHave(text("Daria Test"));
         $(".table-responsive").shouldHave(text("daria@test.com"));

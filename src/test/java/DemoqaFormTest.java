@@ -19,24 +19,21 @@ public class DemoqaFormTest {
 
 
     @Test
-    void FormTest() {
+    void formTest() {
 
         //заполнение формы
         open("/automation-practice-form");
         $("#firstName").setValue("Daria"); //имя
         $("#lastName").setValue("Test"); //фамилия
         $("#userEmail").setValue("daria@test.com"); //почта
-        $(byText("Female")).click(); //пол
+        $("#genterWrapper").$(byText("Female")).click(); //пол
         $("#userNumber").setValue("8900900999"); //телефон
         $("#dateOfBirthInput").click(); //открыть календарь
-        $(".react-datepicker__month-select").click();
-        $(byText("February")).click(); // месяц
-        $(".react-datepicker__year-select").click();
-        $(byText("1990")).click(); // год
-        $(".react-datepicker__month").click();
-        $(byText("23")).click(); // день
+        $(".react-datepicker__year-select").$("option[value='1990']").click(); //год
+        $(".react-datepicker__month-select").$("option[value='1']").click(); //месяц
+        $(".react-datepicker__day--023").click(); //день
         $("#subjectsInput").setValue("Art").pressEnter(); // предметы
-        $(byText("Sports")).click(); // хобби
+        $("#hobbiesWrapper").$(byText("Sports")).click(); // хобби
         $("#uploadPicture").uploadFromClasspath("tst.jpg"); // добавить файл
         $("#currentAddress").setValue("World"); // адрес
         $("#react-select-3-input").setValue("NCR").pressEnter(); // штат
